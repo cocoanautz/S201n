@@ -3,10 +3,13 @@ import fireItem from "./Images/Biketyre.jpg";
 import box2 from "./Images/box2.jpg";
 import box3 from "./Images/box3.jpg";
 import box4 from "./Images/box4.jpg";
+import navBar from "./Images/navbar.jpg";
+import {useNavigate} from "react-router-dom";
 
 import { Grid, Paper } from "@mui/material";
 
 export default function Page1() {
+  const navigate = useNavigate();
   const rectangles = [
     {
       id: 1,
@@ -29,6 +32,10 @@ export default function Page1() {
       imageUrl: box4, // Replace with the actual image URL
     },
   ];
+
+  const handleImageClick = () => {
+    navigate("/page2"); // Navigate to "/page2"
+  };
 
   return (
     <>
@@ -59,7 +66,6 @@ export default function Page1() {
               >
                 {rectangle.id === 1 ? ( // Conditionally render the link only for fireItem
                   <a
-                    href="#your-link-target" //add the navigation here
                     style={{
                       display: "block",
                       width: "100%",
@@ -69,6 +75,7 @@ export default function Page1() {
                       left: 0,
                       zIndex: 2, // Ensure the link is clickable
                     }}
+                    onClick={handleImageClick}
                   >
                     <img
                       src={rectangle.imageUrl}
@@ -95,6 +102,18 @@ export default function Page1() {
             </Grid>
           ))}
         </Grid>
+        <div
+            style={{
+              position: "fixed",
+              bottom: "0",
+              left: "0",
+              right: "0",
+              textAlign: "center",
+              zIndex: "1",
+            }}
+          >
+          <img src={navBar} alt="navbar" style={{ width: "50%" }} />
+          </div> 
       </div>
     </>
   );
