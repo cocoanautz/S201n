@@ -1,5 +1,5 @@
 import topStore from "./Images/page1top.jpg";
-import fireItem from "./Images/Biketyre.jpg";
+import fireItem from "./Images/Biketyre.png";
 import box2 from "./Images/box2.jpg";
 import box3 from "./Images/box3.jpg";
 import box4 from "./Images/box4.jpg";
